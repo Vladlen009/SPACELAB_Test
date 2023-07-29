@@ -1,2 +1,4 @@
-A sample command-line application with an entrypoint in `bin/`, library code
-in `lib/`, and example unit test in `test/`.
+Белоцький Владислав Андрійович
+vlad.belotskiy9595@gmail.com
+час виконання 8 годин
+
