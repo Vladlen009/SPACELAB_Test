@@ -1,4 +1,4 @@
-import 'dart:convert';
+ 
 import 'dart:io';
 
 import 'package:dio/dio.dart';
@@ -41,10 +41,10 @@ Future<String> detectLanguage(String text) async {
       final language = detections[0]['language'];
       return language;
     }
-    return 'unknown_language'; // Handle the case when no detections are available
+    return 'unknown_language'; 
   } catch (e) {
     print('Request failed with error: $e.');
-    return 'unknown_language'; // Return a default value in case of error
+    return 'unknown_language'; 
   }
 }
 
@@ -78,12 +78,12 @@ Future<Map<String, dynamic>> translate3(String item) async {
       ),
     );
 
-    // print(response.data);
+ 
 
-    return response.data; // No need for additional decoding
+    return response.data; 
   } catch (e) {
     print('Request failed with error: $e.');
-    return {}; // Return an empty map as a default value for error cases
+    return {}; 
   }
 }
 
@@ -112,7 +112,7 @@ void main() async {
       final language = await detectLanguage(text);
 
       printWarning("language $text : $language");
-      // print(colorize("Определенный язык: ${language['data']['detections'][0][0]['language']}"));
+ 
     } else {
       printError(
           "Неверная команда. Пожалуйста, введите 'translate', 'detect' или 'end'.");
