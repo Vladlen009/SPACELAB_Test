@@ -1,10 +1,6 @@
 import 'dart:io';
 import 'dart:convert';
-
-void main() async{
-  final List<Map<String, String>> answers = [];
-
-  final jsonConfig = {
+  const jsonConfig = {
     'questions': [
       {
         'id': 1,
@@ -32,6 +28,10 @@ void main() async{
       },
     ]
   };
+void main() async{
+  final List<Map<String, String>> answers = [];
+
+
 
   void displayQuestion(Map<String, dynamic> question) {
     print(question['text']);

@@ -27,8 +27,8 @@ List<Map<String, dynamic>> excludeRule(
 List<Map<String, dynamic>> sortByRule(
     List<Map<String, dynamic>> data, dynamic condition) {
   return [...data]..sort((a, b) {
-      for (var key in condition) {
-        var res = Comparable.compare(a[key], b[key]);
+      for (final key in condition) {
+        final res = Comparable.compare(a[key], b[key]);
         if (res != 0) return res;
       }
       return 0;
@@ -53,11 +53,11 @@ void main() {
     'sort_by': sortByRule,
   };
 
-  var input = jsonDecode(inputJson);
+  final input = jsonDecode(inputJson);
   var data = List<Map<String, dynamic>>.from(input['data']);
-  var condition = input['condition'];
+  final condition = input['condition'];
 
-  for (var rule in condition.keys) {
+  for (final rule in condition.keys) {
     if (rules.containsKey(rule)) {
       data = rules[rule]!(data, condition[rule]);
     }
